@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ffcc70, #ff6f91);
+  font-family: "Comic Sans MS", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.page {
+  background: white;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.memory {
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: rotate(-1deg);
+}
+
+.memory:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.memory img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.next-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 24px;
+  background: #ff4d88;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+  width: fit-content;
+  height: fit-content;
+
+  margin: 30px auto 0;
+}
+
+.next-btn:hover {
+  transform: scale(1.05);
+}
+
+.memory p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.poem-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.poem-card {
+  background: white;
+  max-width: 700px;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.poem-card p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin: 25px 0;
+}
+
+.nav-buttons {
+  margin-top: 30px;
+}
+
+
+.ar img {
+  width: 100%;
+  height: 180px;          
+  object-fit: cover;     
+  border-radius: 15px;
+  display: block;
+}
+
+.ar {
+  background: #fff;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.ar:nth-child(3n) img {
+  height: 220px;
+}
+
+.ar:nth-child(5n) img {
+  height: 160px;
+}
+
+#easter-egg {
+  margin-top: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: #ff4d88;
+  opacity: 0.9;
+}
+
+
