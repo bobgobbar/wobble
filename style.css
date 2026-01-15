@@ -164,3 +164,7 @@ h1 {
     transform: scale(1) rotate(var(--tilt));
   }
 }
+
+.page {
+  background: white !important;
+}
