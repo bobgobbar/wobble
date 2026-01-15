@@ -42,7 +42,7 @@ h1 {
 
 /* ===== IMAGE CARDS ===== */
 .ar {
-  background: #ffffff;
+  background: #e5e5e5; /* soft light grey */
   border-radius: 20px;
   padding: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -156,5 +156,3 @@ h1 {
     transform: scale(1);
   }
 }
-
-
