@@ -1,87 +1,115 @@
+/* disable weird heading decorations */
 h1::before,
 h1::after {
   content: none !important;
 }
 
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  background: linear-gradient(135deg, #ffcc70, #ff6f91);
+  background: linear-gradient(135deg, #7a8f3a, #556b2f); /* OLIVE THEME */
   font-family: "Comic Sans MS", Arial, sans-serif;
   display: flex;
   justify-content: center;
   padding: 40px;
 }
 
+/* ===== MAIN CARD ===== */
 .page {
-  background: white;
+  background: #f6f7f2; /* soft off-white so olive pops */
   max-width: 900px;
   padding: 30px;
   border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
 }
 
+/* ===== TITLE ===== */
 h1 {
   text-align: center;
   font-size: 48px;
   margin-bottom: 30px;
-  color: #333;
+  color: #2f3e1f; /* dark olive */
 }
 
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
-.memory {
-  background: #fff;
+/* ===== IMAGE CARDS ===== */
+.ar {
+  background: #ffffff;
   border-radius: 20px;
-  padding: 10px;
-  text-align: center;
+  padding: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transform: rotate(-1deg);
+  opacity: 0;
+  animation: popIn 0.8s ease forwards;
 }
 
-.memory:nth-child(even) {
-  transform: rotate(1deg);
-}
+/* stagger animation (THIS makes it feel alive) */
+.ar:nth-child(1) { animation-delay: 0.1s; }
+.ar:nth-child(2) { animation-delay: 0.2s; }
+.ar:nth-child(3) { animation-delay: 0.3s; }
+.ar:nth-child(4) { animation-delay: 0.4s; }
+.ar:nth-child(5) { animation-delay: 0.5s; }
+.ar:nth-child(6) { animation-delay: 0.6s; }
+.ar:nth-child(7) { animation-delay: 0.7s; }
+.ar:nth-child(8) { animation-delay: 0.8s; }
 
-.memory img {
+.ar img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   border-radius: 15px;
+  display: block;
 }
 
+/* slight size variation (keeps it playful) */
+.ar:nth-child(3n) img { height: 220px; }
+.ar:nth-child(5n) img { height: 160px; }
+
+.memory p,
+.ar p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #3a4a2a;
+}
+
+/* ===== BUTTON ===== */
 .next-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  margin: 30px auto 0;
   padding: 12px 24px;
-  background: #ff4d88;
+  background: #556b2f; /* olive */
   color: white;
   text-decoration: none;
   font-size: 18px;
-
   border-radius: 30px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-
-  width: fit-content;
-  height: fit-content;
-
-  margin: 30px auto 0;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
 .next-btn:hover {
+  background: #3e5220;
   transform: scale(1.05);
 }
 
-.memory p {
-  margin-top: 10px;
-  font-size: 16px;
+/* ===== EASTER EGG ===== */
+#easter-egg {
+  margin-top: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: #6b8e23;
+  opacity: 0.9;
 }
 
+/* ===== POEM PAGE ===== */
 .poem-page {
   min-height: 100vh;
   display: flex;
@@ -106,46 +134,11 @@ h1 {
   margin: 25px 0;
 }
 
-.nav-buttons {
-  margin-top: 30px;
-}
-
-
-.ar img {
-  width: 100%;
-  height: 180px;          
-  object-fit: cover;     
-  border-radius: 15px;
-  display: block;
-}
-
-.ar {
-  background: #fff;
-  border-radius: 20px;
-  padding: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.ar:nth-child(3n) img {
-  height: 220px;
-}
-
-.ar:nth-child(5n) img {
-  height: 160px;
-}
-
-#easter-egg {
-  margin-top: 40px;
-  font-size: 18px;
-  text-align: center;
-  color: #ff4d88;
-  opacity: 0.9;
-}
-
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -153,25 +146,13 @@ h1 {
   }
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
-}
-
 @keyframes popIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
-
-.pop-in {
-  opacity: 0;
-  animation: popIn 0.8s ease forwards;
-}
-
-
