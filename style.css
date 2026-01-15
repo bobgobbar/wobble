@@ -37,20 +37,27 @@ h1 {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
 
-/* ===== IMAGE CARDS ===== */
+/* ===== IMAGE CARDS (POLAROID STYLE) ===== */
 .ar {
-  background: #e5e5e5; /* soft light grey */
-  border-radius: 20px;
-  padding: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: #fafafa; /* polaroid paper */
+  border-radius: 6px;
+  padding: 12px 12px 32px; /* extra bottom space */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
   opacity: 0;
   animation: popIn 0.8s ease forwards;
+  transform: rotate(var(--tilt));
 }
 
-/* stagger animation (THIS makes it feel alive) */
+/* random-looking tilts */
+.ar:nth-child(odd)  { --tilt: -2deg; }
+.ar:nth-child(even) { --tilt: 2deg; }
+.ar:nth-child(3n)   { --tilt: 1deg; }
+.ar:nth-child(5n)   { --tilt: -1deg; }
+
+/* stagger animation */
 .ar:nth-child(1) { animation-delay: 0.1s; }
 .ar:nth-child(2) { animation-delay: 0.2s; }
 .ar:nth-child(3) { animation-delay: 0.3s; }
@@ -64,7 +71,7 @@ h1 {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 4px;
   display: block;
 }
 
@@ -74,9 +81,10 @@ h1 {
 
 .memory p,
 .ar p {
-  margin-top: 10px;
-  font-size: 16px;
+  margin-top: 14px;
+  font-size: 15px;
   color: #3a4a2a;
+  text-align: center;
 }
 
 /* ===== BUTTON ===== */
@@ -84,8 +92,8 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 30px auto 0;
-  padding: 12px 24px;
+  margin: 40px auto 0;
+  padding: 12px 26px;
   background: #556b2f; /* olive */
   color: white;
   text-decoration: none;
@@ -149,10 +157,10 @@ h1 {
 @keyframes popIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.9) rotate(var(--tilt));
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotate(var(--tilt));
   }
 }
