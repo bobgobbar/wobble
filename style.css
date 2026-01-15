@@ -1,3 +1,8 @@
+h1::before,
+h1::after {
+  content: none !important;
+}
+
 body {
   margin: 0;
   background: linear-gradient(135deg, #ffcc70, #ff6f91);
@@ -168,4 +173,5 @@ h1 {
   opacity: 0;
   animation: popIn 0.8s ease forwards;
 }
+
 
