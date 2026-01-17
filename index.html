@@ -6,24 +6,19 @@
 </head>
 
 <body>
-<div class="music-control" onclick="toggleMusic()">
-  <span id="music-icon">▶</span>
-  <span class="music-text">play music</span>
-</div>
 
-<audio id="bg-music" loop>
-  <source src="music/romantic.mp3" type="audio/mpeg">
-</audio>
+  <!-- MUSIC CONTROL BUTTON -->
+  <div class="music-control" onclick="toggleMusic()">
+    <span id="music-icon">▶</span>
+    <span class="music-text">play music</span>
+  </div>
 
-  
-<audio id="bg-music" loop>
-  <source src="MUSIC/song2.mp3" type="audio/mpeg">
-</audio>
-  <button onclick="document.getElementById('bg-music').play()">
-   wobble song
-</button>
+  <!-- BACKGROUND MUSIC (ONLY ONE) -->
+  <audio id="bg-music" loop>
+    <source src="music/romantic.mp3" type="audio/mpeg">
+  </audio>
 
-  <!-- MAIN WRAPPER WITH ANIMATION -->
+  <!-- MAIN CONTENT -->
   <div class="page fade-in">
 
     <h1 id="secret-trigger">
@@ -81,11 +76,22 @@
 
   <a href="poem.html" class="next-btn">next wobble ig :I ➜</a>
 
+  <!-- MUSIC SCRIPT -->
+  <script>
+    const music = document.getElementById("bg-music");
+    const icon = document.getElementById("music-icon");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        icon.textContent = "⏸";
+      } else {
+        music.pause();
+        icon.textContent = "▶";
+      }
+    }
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
