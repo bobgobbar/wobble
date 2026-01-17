@@ -17,3 +17,17 @@ if (trigger) {
 const music = document.getElementById("bg-music");
 music.volume = 0.2;
 
+const music = document.getElementById("bg-music");
+const icon = document.getElementById("music-icon");
+
+music.volume = 0.3;
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    icon.textContent = "⏸";
+  } else {
+    music.pause();
+    icon.textContent = "▶";
+  }
+}
