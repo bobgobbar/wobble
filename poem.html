@@ -55,9 +55,25 @@
     </div>
 
   </div>
+ <!-- MUSIC SCRIPT -->
+  <script>
+    const music = document.getElementById("bg-music");
+    const icon = document.getElementById("music-icon");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        icon.textContent = "⏸";
+      } else {
+        music.pause();
+        icon.textContent = "▶";
+      }
+    }
+  </script>
 
 </body>
 </html>
+
 
 
 
