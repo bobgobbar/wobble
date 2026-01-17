@@ -20,7 +20,7 @@ music.volume = 0.2;
 const music = document.getElementById("bg-music");
 const icon = document.getElementById("music-icon");
 
-music.volume = 0.3;
+music.volume = 0.2;
 
 function toggleMusic() {
   if (music.paused) {
@@ -31,3 +31,4 @@ function toggleMusic() {
     icon.textContent = "▶";
   }
 }
+
