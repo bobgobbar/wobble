@@ -156,3 +156,40 @@ h1 {
   background: white !important;
 }
 
+.music-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 22px;
+  margin: 20px auto;
+
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 40px;
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  font-size: 18px;
+  user-select: none;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.music-control:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+.music-control:active {
+  transform: scale(0.97);
+}
+
+#music-icon {
+  font-size: 22px;
+}
+
+.music-text {
+  font-weight: 600;
+  color: #556b2f; /* olive tone */
+}
+
