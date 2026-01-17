@@ -193,3 +193,23 @@ h1 {
   color: #556b2f; /* olive tone */
 }
 
+/* ---- FIX STRETCHED BUTTONS ---- */
+
+.next-btn,
+.music-control,
+button {
+  width: fit-content;
+  align-self: center;
+}
+
+/* if buttons are inside a flex container */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+/* make music button behave */
+.music-control {
+  display: inline-flex;
+}
+
