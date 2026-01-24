@@ -42,12 +42,13 @@ function toggleMusic() {
   if (!isPlaying) {
     music.play();
     icon.textContent = "⏸";
-    text.textContent = "pause music";
+    text.textContent = "haha music wrwmr";
     isPlaying = true;
   } else {
     music.pause();
     icon.textContent = "▶";
-    text.textContent = "play music";
+    text.textContent = "this button looks cool";
     isPlaying = false;
   }
 }
+
