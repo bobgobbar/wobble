@@ -37,12 +37,13 @@ body {
 /* ================= STAGE ================= */
 .stage {
   min-height: 100vh;
-  padding: 120px 60px 80px;
+  padding: 80px 40px 40px;   /* was 120px 60px 80px */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
+
 
 /* ================= TITLES ================= */
 .title-glow {
@@ -62,16 +63,16 @@ body {
   text-align: center;
 }
 
-/* ================= GALLERY GRID ================= */
 .gallery {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1200px;     /* smaller than 1300 */
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);   /* FORCE GRID */
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;             /* was 40px */
   align-items: start;
 }
+
 
 /* RESPONSIVE GRID */
 @media (max-width: 1100px) {
@@ -86,44 +87,43 @@ body {
   }
 }
 
-/* ================= FRAMES ================= */
 .frame {
   background: rgba(255,255,255,0.08);
-  border-radius: 22px;
-  padding: 14px;
+  border-radius: 18px;   /* was 22px */
+  padding: 10px;        /* was 14px */
   text-align: center;
   backdrop-filter: blur(8px);
-  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
   animation: fadeUp 1.2s ease forwards;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* IMAGE FIX (NO ELONGATION) */
+
 .frame img {
   width: 100%;
-  aspect-ratio: 3 / 4;        /* CINEMATIC POSTER RATIO */
+  aspect-ratio: 3 / 4;
+  height: 190px;        /* ADD THIS LINE */
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
-/* TEXT */
+
 .frame p {
-  margin-top: 12px;
-  font-size: 14px;
+  margin-top: 8px;
+  font-size: 13px;      /* was 14px */
   opacity: 0.85;
 }
 
-/* ================= BUTTON ================= */
 .cinema-btn {
-  margin: 70px auto 0;
+  margin: 40px auto 0;  /* was 70px */
   text-decoration: none;
   background: #6b8e23;
   color: black;
-  padding: 16px 36px;
+  padding: 14px 32px;
   border-radius: 40px;
-  font-size: 18px;
+  font-size: 17px;
   letter-spacing: 1px;
   box-shadow: 0 0 35px rgba(107,142,35,0.6);
   transition: 0.3s ease;
@@ -203,3 +203,4 @@ body {
     transform: translateY(0);
   }
 }
+
