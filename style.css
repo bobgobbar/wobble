@@ -57,10 +57,10 @@ body {
 }
 
 .subtitle {
-  opacity: 0.75;
-  margin-bottom: 60px;
-  text-align: center;
+  margin-bottom: 25px;
+  font-size: 15px;   /* was 14px */
 }
+
 
 .gallery {
   width: 100%;
@@ -100,19 +100,20 @@ body {
 }
 
 
-
 .frame p {
   margin-top: 6px;
-  font-size: 11px;
-  line-height: 1.2;
+  font-size: 12.5px;   /* was 11px */
+  line-height: 1.3;
 }
+
 
 
 .cinema-btn {
-  margin: 18px auto 0;   /* very close to grid */
+  margin: 18px auto 0;
   padding: 12px 28px;
-  font-size: 16px;
+  font-size: 17px;   /* was 16px */
 }
+
 
 .cinema-btn:hover {
   transform: scale(1.07);
@@ -140,15 +141,16 @@ body {
 }
 
 .final-card h2 {
-  font-size: 42px;
+  font-size: 44px;
   margin-bottom: 30px;
   color: #6b8e23;
 }
 
 .final-card p {
-  font-size: 20px;
+  font-size: 21px;   /* was 20px */
   margin: 18px 0;
 }
+
 
 .final-line {
   margin-top: 30px;
@@ -187,6 +189,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
