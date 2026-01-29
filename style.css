@@ -34,10 +34,9 @@ body {
   transform: scale(1.05);
 }
 
-/* ================= STAGE ================= */
 .stage {
   min-height: 100vh;
-  padding: 80px 40px 40px;   /* was 120px 60px 80px */
+  padding: 50px 30px 20px;   /* super compact */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,33 +44,27 @@ body {
 }
 
 
-/* ================= TITLES ================= */
+
 .title-glow {
-  font-size: 64px;
-  margin-bottom: 12px;
-  color: #eaffb3;
-  text-align: center;
-  text-shadow:
-    0 0 20px rgba(107,142,35,0.6),
-    0 0 40px rgba(107,142,35,0.3);
-  animation: titleIn 1.5s ease forwards;
+  font-size: 46px;   /* was 64px */
+  margin-bottom: 6px;
 }
 
 .subtitle {
-  opacity: 0.75;
-  margin-bottom: 60px;
-  text-align: center;
+  margin-bottom: 25px;
+  font-size: 14px;
 }
 
 .gallery {
   width: 100%;
-  max-width: 1200px;     /* smaller than 1300 */
+  max-width: 1150px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;             /* was 40px */
+  grid-template-columns: repeat(4, 1fr);   /* 4 columns instead of 3 */
+  gap: 18px;                               /* tighter gap */
   align-items: start;
 }
+
 
 
 /* RESPONSIVE GRID */
@@ -86,48 +79,32 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
 .frame {
-  background: rgba(255,255,255,0.08);
-  border-radius: 18px;   /* was 22px */
-  padding: 10px;        /* was 14px */
-  text-align: center;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.7);
-  animation: fadeUp 1.2s ease forwards;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
 }
-
 
 .frame img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  height: 190px;        /* ADD THIS LINE */
+  height: 140px;          /* hard cap */
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 12px;
 }
+
 
 
 .frame p {
-  margin-top: 8px;
-  font-size: 13px;      /* was 14px */
-  opacity: 0.85;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.2;
 }
 
+
 .cinema-btn {
-  margin: 40px auto 0;  /* was 70px */
-  text-decoration: none;
-  background: #6b8e23;
-  color: black;
-  padding: 14px 32px;
-  border-radius: 40px;
-  font-size: 17px;
-  letter-spacing: 1px;
-  box-shadow: 0 0 35px rgba(107,142,35,0.6);
-  transition: 0.3s ease;
-  display: inline-block;
+  margin: 18px auto 0;   /* very close to grid */
+  padding: 12px 28px;
+  font-size: 16px;
 }
 
 .cinema-btn:hover {
@@ -203,4 +180,5 @@ body {
     transform: translateY(0);
   }
 }
+
 
