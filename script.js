@@ -1,19 +1,17 @@
-let isPlaying = false;
+let started = false;
 
-function toggleMusic() {
+function startMusic() {
+  if (started) return;
+
   const music = document.getElementById("bg-music");
-  const icon = document.getElementById("music-icon");
-  const text = document.querySelector(".music-text");
-
-  if (!isPlaying) {
+  if (music) {
+    music.volume = 0.7;   // soft cinema vibe
     music.play();
-    icon.textContent = "⏸";
-    text.textContent = "haha music wrmwr";
-    isPlaying = true;
-  } else {
-    music.pause();
-    icon.textContent = "▶";
-    text.textContent = "start the vibe";
-    isPlaying = false;
+    started = true;
   }
 }
+
+/* start music on first interaction */
+document.addEventListener("click", startMusic);
+document.addEventListener("keydown", startMusic);
+document.addEventListener("touchstart", startMusic);
