@@ -12,27 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* MUSIC BUTTON (optional if removed later) */
-.music-control {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 10px 18px;
-  border-radius: 30px;
-  cursor: pointer;
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-  backdrop-filter: blur(6px);
-  z-index: 1000;
-}
-
-.music-control:hover {
-  transform: scale(1.05);
-}
-
 /* STAGE */
 .stage {
   min-height: 100vh;
@@ -40,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* IMPORTANT FIX */
 }
 
 /* TITLES */
@@ -61,17 +40,19 @@ body {
   text-align: center;
 }
 
-/* GALLERY (CINEMATIC FIXED GRID) */
+/* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
+  grid-template-columns: repeat(auto-fit, 260px); /* FIXED WIDTH */
+  grid-auto-rows: auto; /* STOP ROW STRETCH */
   justify-content: center;
   gap: 40px;
   max-width: 1200px;
   width: 100%;
+  align-items: start; /* CRITICAL FIX */
 }
 
-/* FRAMES */
+/* FRAME */
 .frame {
   background: rgba(255,255,255,0.08);
   border-radius: 18px;
@@ -80,24 +61,27 @@ body {
   backdrop-filter: blur(6px);
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
   animation: fadeUp 1.2s ease forwards;
+  height: auto; /* STOP STRETCH */
 }
 
-/* IMAGE FIX (NO STRETCH, NO ELONGATION) */
+/* IMAGE CONTAINER */
 .frame img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: auto; /* 🔥 KEY FIX */
+  aspect-ratio: 3 / 4; /* CINEMATIC PORTRAIT */
   object-fit: cover;
   border-radius: 12px;
+  display: block;
 }
 
-/* CAPTIONS */
+/* TEXT */
 .frame p {
   margin-top: 12px;
   font-size: 14px;
   opacity: 0.85;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .cinema-btn {
   margin-top: 50px;
   text-decoration: none;
@@ -154,15 +138,6 @@ body {
 }
 
 /* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 1.5s ease forwards;
-}
-
 @keyframes titleIn {
   from {
     opacity: 0;
