@@ -84,7 +84,7 @@ h1 {
   justify-content: center;
   margin: 40px auto 0;
   padding: 12px 26px;
-  background: #556b2f; /* olive */
+  background: #556b2f;
   color: white;
   text-decoration: none;
   font-size: 18px;
@@ -190,10 +190,10 @@ h1 {
 
 .music-text {
   font-weight: 600;
-  color: #556b2f; /* olive tone */
+  color: #556b2f; 
 }
 
-/* ---- FIX STRETCHED BUTTONS ---- */
+
 
 .next-btn,
 .music-control,
@@ -202,14 +202,21 @@ button {
   align-self: center;
 }
 
-/* if buttons are inside a flex container */
+
 .nav-buttons {
   display: flex;
   justify-content: center;
 }
 
-/* make music button behave */
+
 .music-control {
   display: inline-flex;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
