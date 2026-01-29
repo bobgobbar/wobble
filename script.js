@@ -1,270 +1,31 @@
+let started = false;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", sans-serif;
-}
+function startMusic() {
+  if (started) return;
 
-body {
-  min-height: 100vh;
-  background: radial-gradient(circle at center, #0a0a0a, #000);
-  color: white;
-  overflow-x: hidden;
-}
-
-/* ================= MUSIC ================= */
-.music-control {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 10px 18px;
-  border-radius: 30px;
-  cursor: pointer;
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-  backdrop-filter: blur(6px);
-  z-index: 1000;
-  transition: 0.3s ease;
-}
-
-.music-control:hover {
-  transform: scale(1.05);
-}
-
-.stage {
-  min-height: 100vh;
-  padding: 50px 30px 20px;   /* super compact */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-
-
-.title-glow {
-  font-size: 64px;
-  margin-bottom: 12px;
-  color: #eaffb3;
-  text-align: center;
-  text-shadow:
-    0 0 20px rgba(107,142,35,0.6),
-    0 0 40px rgba(107,142,35,0.3);
-  animation: titleIn 1.5s ease forwards;
-}
-
-.subtitle {
-  margin-bottom: 25px;
-  font-size: 20px;   /* was 14px */
-}
-
-
-.gallery {
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);   /* 4 columns instead of 3 */
-  gap: 18px;                               /* tighter gap */
-  align-items: start;
-}
-
-
-
-/* RESPONSIVE GRID */
-@media (max-width: 1100px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
+  const music = document.getElementById("bg-music");
+  if (music) {
+    music.volume = 0.7;
+    music.play().catch(()=>{});
+    started = true;
   }
 }
 
-@media (max-width: 650px) {
-  .gallery {
-    grid-template-columns: 1fr;
+/* Easter egg */
+document.addEventListener("DOMContentLoaded", () => {
+  const trigger = document.getElementById("secret-trigger");
+  const egg = document.getElementById("easter-egg");
+
+  if (egg) egg.style.display = "none";
+
+  if (trigger && egg) {
+    trigger.addEventListener("click", () => {
+      egg.style.display = egg.style.display === "none" ? "block" : "none";
+    });
   }
-}
-.frame {
-  border-radius: 14px;
-  padding: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
-}
+});
 
-.frame img {
-  width: 100%;
-  height: 140px;          /* hard cap */
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-
-.frame p {
-  margin-top: 6px;
-  font-size: 17px;   /* was 11px */
-  line-height: 1.3;
-}
-
-
-
-.cinema-btn {
-  margin: 18px auto 0;
-  padding: 12px 28px;
-  font-size: 17px;   /* was 16px */
-}
-
-
-.cinema-btn:hover {
-  transform: scale(1.07);
-}
-
-/* ================= FINAL SCENE ================= */
-.final-stage {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.final-card {
-  background: rgba(255,255,255,0.95);
-  color: black;
-  padding: 60px;
-  border-radius: 30px;
-  max-width: 700px;
-  text-align: center;
-  box-shadow:
-    0 0 40px rgba(107,142,35,0.4),
-    0 0 80px rgba(107,142,35,0.2);
-}
-
-.final-card h2 {
-  font-size: 44px;
-  margin-bottom: 30px;
-  color: #6b8e23;
-}
-
-.final-card p {
-  font-size: 21px;   /* was 20px */
-  margin: 18px 0;
-}
-
-
-.final-line {
-  margin-top: 30px;
-  font-size: 26px;
-  color: #6b8e23;
-}
-
-/* ================= ANIMATIONS ================= */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 1.5s ease forwards;
-}
-
-@keyframes titleIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-/* ================= INTRO COVER ================= */
-
-.intro-stage {
-  min-height: 100vh;
-  background: radial-gradient(circle at center, #050505, #000);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-}
-
-.intro-card {
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  padding: 70px 80px;
-  border-radius: 30px;
-  box-shadow: 
-    0 0 40px rgba(0,0,0,0.8),
-    0 0 120px rgba(107,142,35,0.15);
-  max-width: 700px;
-  width: 100%;
-}
-
-.intro-title {
-  font-size: 64px;
-  color: #eaffb3;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  text-shadow:
-    0 0 25px rgba(107,142,35,0.6),
-    0 0 60px rgba(107,142,35,0.3);
-}
-
-.intro-sub {
-  opacity: 0.7;
-  font-size: 16px;
-  margin-bottom: 35px;
-}
-
-.intro-line {
-  width: 120px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #6b8e23, transparent);
-  margin: 0 auto 35px;
-}
-
-.intro-text {
-  font-size: 18px;
-  line-height: 1.7;
-  opacity: 0.85;
-  margin-bottom: 45px;
-}
-
-.intro-btn {
-  display: inline-block;
-  text-decoration: none;
-  background: #6b8e23;
-  color: black;
-  padding: 14px 34px;
-  border-radius: 40px;
-  font-size: 17px;
-  letter-spacing: 1px;
-  box-shadow: 0 0 35px rgba(107,142,35,0.6);
-  transition: 0.3s ease;
-}
-
-.intro-btn:hover {
-  transform: scale(1.06);
-}
-
-
-
-
+/* start music on first interaction */
+document.addEventListener("click", startMusic);
+document.addEventListener("keydown", startMusic);
+document.addEventListener("touchstart", startMusic);
