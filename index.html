@@ -1,113 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>wobble😎</title>
+  <title>wobble 🎬</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- MUSIC CONTROL BUTTON -->
+  <!-- MUSIC CONTROL -->
   <div class="music-control" onclick="toggleMusic()">
     <span id="music-icon">▶</span>
-    <span class="music-text">this button looks cool</span>
+    <span class="music-text">start the vibe</span>
   </div>
 
-  <!-- BACKGROUND MUSIC (ONLY ONE) -->
   <audio id="bg-music" loop>
-    <source src="MUSIC/song4.mp3" type="audio/mpeg">
+    <source src="music/romantic.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- MAIN CONTENT -->
-  <div class="page fade-in">
+  <!-- CINEMA STAGE -->
+  <div class="stage fade-in">
 
-    <h1 id="secret-trigger">
-      birthday card hahahahahaa 👑👑
-    </h1>
+    <h1 class="title-glow">Happy Birthday 💚</h1>
+    <p class="subtitle">a small digital memory</p>
 
-    <p id="easter-egg" style="display:none;">
-      if you actually found this ur really smart but also clumsy asf<br>
-      HAHAHAHHAHAHAHAHAHAHAHAHAHAH sorry for calling u clumsy i love u smmm 💗💗
-    </p>
+    <div class="gallery">
 
-    <div class="grid">
-
-      <div class="ar pop-in">
-        <img src="images/img1.jpg" alt="w1">
-        <p>hahaha this is cool</p>
+      <div class="frame">
+        <img src="images/img1.jpg">
+        <p>this is where everything started</p>
       </div>
 
-      <div class="ar pop-in">
-        <img src="images/img2.jpg" alt="w2">
-        <p>low quality but still cool 😎</p>
+      <div class="frame">
+        <img src="images/img2.jpg">
+        <p>still one of my favorites</p>
       </div>
 
-      <div class="ar pop-in">
-        <img src="images/img3.jpg" alt="w3">
-        <p>hahaha i feel like ive said cool alot :|</p>
+      <div class="frame">
+        <img src="images/img3.jpg">
+        <p>you don’t even try and you look good</p>
       </div>
 
-      <div class="ar pop-in">
-        <img src="images/img4.jpg" alt="w4">
-        <p>YOU CANT EVEN DENY U LOOK GOOD IN THIS</p>
+      <div class="frame">
+        <img src="images/img4.jpg">
+        <p>main character energy</p>
       </div>
 
-      <div class="ar pop-in">
-        <img src="images/img5.jpg" alt="w5">
-        <p>i was kinda bored so i kept this in<br>
-           haha peekaboo 🫣<br>
-        </p>
+      <div class="frame">
+        <img src="images/img5.jpg">
+        <p>soft moments > everything</p>
       </div>
 
-      <div class="ar pop-in">
-        <img src="images/img6.jpg" alt="w6">
-        <p>AND NO THIS IS NOT CHOPPED 😡</p>
-      </div>
-
-      <div class="ar pop-in">
-        <img src="images/img7.jpg" alt="w7">
-        <p>the OP cool guy who made this 😎<br>
-          OK FINE IM CHOPPED I CANT HELP IT 😣
-        </p>
-      </div>
-
-      <div class="ar pop-in">
-        <p>im getting bored of wobble 😒😑<br>
-           rawr    ^-^✌️✌️<br>
-          but like girlie still sounds kinda cool 🫖🍵
-        </p>
+      <div class="frame">
+        <img src="images/img6.jpg">
+        <p>this one lives rent free in my head</p>
       </div>
 
     </div>
+
+    <a href="poem.html" class="cinema-btn">continue →</a>
+
   </div>
-
-  <a href="poem.html" class="next-btn">next wobble ig :| ➜</a>
-
-  <!-- MUSIC SCRIPT -->
-  <script>
-    const music = document.getElementById("bg-music");
-    const icon = document.getElementById("music-icon");
-
-    function toggleMusic() {
-      if (music.paused) {
-        music.play();
-        icon.textContent = "⏸";
-      } else {
-        music.pause();
-        icon.textContent = "▶";
-      }
-    }
-  </script>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
