@@ -46,13 +46,20 @@ body {
 
 
 .title-glow {
-  font-size: 46px;   /* was 64px */
-  margin-bottom: 6px;
+  font-size: 64px;
+  margin-bottom: 12px;
+  color: #eaffb3;
+  text-align: center;
+  text-shadow:
+    0 0 20px rgba(107,142,35,0.6),
+    0 0 40px rgba(107,142,35,0.3);
+  animation: titleIn 1.5s ease forwards;
 }
 
 .subtitle {
-  margin-bottom: 25px;
-  font-size: 14px;
+  opacity: 0.75;
+  margin-bottom: 60px;
+  text-align: center;
 }
 
 .gallery {
@@ -180,5 +187,6 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
