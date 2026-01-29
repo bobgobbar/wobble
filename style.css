@@ -235,3 +235,6 @@ h1 {
   animation: titleRise 1.5s ease forwards;
 }
 
+.ar {
+  animation-delay: 0.3s;
+}
