@@ -131,6 +131,21 @@ body{
   opacity:.9;
 }
 
+/* ================= POP-IN FIX ================= */
+.grid .ar{
+  opacity:0;
+  animation:popIn .9s ease forwards;
+}
+
+.grid .ar:nth-child(1){animation-delay:.1s}
+.grid .ar:nth-child(2){animation-delay:.2s}
+.grid .ar:nth-child(3){animation-delay:.3s}
+.grid .ar:nth-child(4){animation-delay:.4s}
+.grid .ar:nth-child(5){animation-delay:.5s}
+.grid .ar:nth-child(6){animation-delay:.6s}
+.grid .ar:nth-child(7){animation-delay:.7s}
+.grid .ar:nth-child(8){animation-delay:.8s}
+
 /* BUTTON */
 .next-btn{
   margin-top:18px;
