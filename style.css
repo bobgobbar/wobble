@@ -16,6 +16,22 @@ body{
 .fade-in{animation:fadeIn 1.5s ease forwards;}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
+.pop-in{
+  opacity:0;
+  animation:popIn .9s ease forwards;
+}
+
+@keyframes popIn{
+  from{
+    opacity:0;
+    transform:scale(.92) translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:scale(1) translateY(0);
+  }
+}
+
 /* ================= INTRO ================= */
 .intro-stage{
   min-height:100vh;
@@ -71,6 +87,7 @@ body{
   font-size:42px;
   margin-bottom:10px;
   cursor:pointer;
+  text-align:center;
 }
 
 #easter-egg{
@@ -88,6 +105,7 @@ body{
   margin-top:20px;
 }
 
+/* FRAME */
 .ar{
   background:rgba(255,255,255,0.06);
   border-radius:16px;
@@ -98,6 +116,7 @@ body{
   flex-direction:column;
 }
 
+/* IMAGE */
 .ar img{
   width:100%;
   height:135px;
@@ -105,12 +124,14 @@ body{
   border-radius:12px;
 }
 
+/* TEXT */
 .ar p{
   margin-top:6px;
   font-size:16px;
   opacity:.9;
 }
 
+/* BUTTON */
 .next-btn{
   margin-top:18px;
   text-decoration:none;
