@@ -90,6 +90,13 @@ body{
   text-align:center;
 }
 
+#secret-trigger{
+  text-shadow:
+    0 0 12px rgba(107,142,35,0.5),
+    0 0 28px rgba(107,142,35,0.35),
+    0 0 55px rgba(107,142,35,0.2);
+}
+
 #easter-egg{
   display:none;
   margin-bottom:15px;
@@ -208,3 +215,4 @@ body{
   transition:.3s;
 }
 .cinema-btn:hover{transform:scale(1.06)}
+
